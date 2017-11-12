@@ -1,0 +1,92 @@
+// ----
+// Sass (v3.4.21)
+// Compass (v1.0.3)
+// ----
+
+/*variables*/
+$widtha: 30px; /* variable*/
+$aray1: "el1 a" el2 el3 el4;  /*array variable*/
+$body-font-size:1em;
+@function f1($elem)
+{
+  @if $elem<5 {  @return $elem*$body-font-size;}
+
+  @else{@return $elem+$body-font-size/3;}
+  
+}
+pre{font-size:f1(6); background-color:red;}
+@mixin radius($radius)    /*mixin define*/
+{
+   
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+li 
+{
+  div 
+  {       /*div inside li*/
+  
+       padding:40px;
+       margin:10px;
+       width: $widtha;
+       @include radius(10px);   /*mixin usage*/
+  }
+}
+
+ 
+
+/*add groub  through @extend */
+%w-h
+{
+  width:200px;  height:20px; text-align:center;
+} 
+
+ /*for loop*/
+@for $i from 1 through 4  
+{  .class#{$i+1}
+   {
+     @extend %w-h; /*implementing the w-h group*/
+     background-color:#d#{$i*2+1}0;
+     font-size:$i*6#{px};  
+   }
+}
+
+div 
+  {      
+       color:red;
+       padding:10px;
+       margin:10px;
+       width: f1(2);
+       @extend %w-h;
+       @include radius(10px);
+  }       
+  
+  /* each  (foreach)*/
+  $ii:1;
+  @each $ar in $aray1
+  {
+    .class#{$ii+1}:after{content:'#{$ar}';}
+    $ii: $ii+1;
+  }
+  
+  $a1: a11 a12 a13 a14;
+  $a2: a21 a22 a23 a24;
+  $a3: a31 a32 a33 a34;
+  $b:  $a1 $a2 $a3 ;
+  @each $i,$i1,$i2 in $b
+  {
+    div:before{content:'#{$i},#{$i1},#{$i2}'; color:blue !important; left:300px;top:0px;}
+  }
+  
+  /*array (key:value)*/
+   $b:  (class2:yellow,class3:gray) ;
+  @each $i1,$i2 in $b
+  {
+    .#{$i1}{ color:#{$i2} !important; left:300px;top:0px;}
+  }
+p{display:inline-block;}
+/* functions*/
+

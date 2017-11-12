@@ -1,0 +1,119 @@
+/*variables*/
+/* variable*/
+/*array variable*/
+pre {
+  font-size: 6.33333333em;
+  background-color: red;
+}
+
+li div {
+  /*div inside li*/
+  padding: 40px;
+  margin: 10px;
+  width: 30px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  /*mixin usage*/
+}
+
+/*add groub  through @extend */
+.class2, .class3, .class4, .class5, div {
+  width: 200px;
+  height: 20px;
+  text-align: center;
+}
+
+/*for loop*/
+.class2 {
+  /*implementing the w-h group*/
+  background-color: #d30;
+  font-size: 6px;
+}
+
+.class3 {
+  /*implementing the w-h group*/
+  background-color: #d50;
+  font-size: 12px;
+}
+
+.class4 {
+  /*implementing the w-h group*/
+  background-color: #d70;
+  font-size: 18px;
+}
+
+.class5 {
+  /*implementing the w-h group*/
+  background-color: #d90;
+  font-size: 24px;
+}
+
+div {
+  color: red;
+  padding: 10px;
+  margin: 10px;
+  width: 2em;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+
+/* each  (foreach)*/
+.class2:after {
+  content: "el1 a";
+}
+
+.class3:after {
+  content: "el2";
+}
+
+.class4:after {
+  content: "el3";
+}
+
+.class5:after {
+  content: "el4";
+}
+
+div:before {
+  content: "a11,a12,a13";
+  color: blue !important;
+  left: 300px;
+  top: 0px;
+}
+
+div:before {
+  content: "a21,a22,a23";
+  color: blue !important;
+  left: 300px;
+  top: 0px;
+}
+
+div:before {
+  content: "a31,a32,a33";
+  color: blue !important;
+  left: 300px;
+  top: 0px;
+}
+
+/*array (key:value)*/
+.class2 {
+  color: yellow !important;
+  left: 300px;
+  top: 0px;
+}
+
+.class3 {
+  color: gray !important;
+  left: 300px;
+  top: 0px;
+}
+
+p {
+  display: inline-block;
+}
+
+/* functions*/
